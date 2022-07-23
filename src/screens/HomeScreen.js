@@ -18,19 +18,14 @@ export default function Welcom(props) {
   }
   const isFocused = useIsFocused()
     const [data, setData] = useState()
+
    const [loading, setLoading] = useState( false )
 
     useEffect(() => {
       // setLoading(true)
       async function fetchData() {
-        const data={
-          "request":"loginUser",
-          "username" : "test@gmail.com",
-          "password" : 'goodluck',
-      }
-      console.log('data', data)
-      const response = await fetchApi(config.TEST+'loginUser',data);
-      console.log('response', response)
+      const response = await fetchApi(config.TEST+'collectUsers');
+      console.log('responseeeee', response)
       }
   //   if (response.data.status){
   //    setData(response.data.records.filter(el => {
